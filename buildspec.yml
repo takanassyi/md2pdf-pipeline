@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       - ls
-      - pandoc src/README-Template.md -f markdown -o src/README-Template.md -V documentclass=ltjarticle -V classoption=a4j -V geometry:margin=1in --pdf-engine=lualatex
+      - pandoc src/README-Template.md -f markdown -o src/README-Template.pdf -V documentclass=ltjarticle -V classoption=a4j -V geometry:margin=1in --pdf-engine=lualatex
   post_build:
     commands:
       - echo Build completed on `date`
