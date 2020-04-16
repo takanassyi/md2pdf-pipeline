@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Nothing to do in the install phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - ls
+      - pandoc src/README-Template.md -f markdown -o src/README-Template.md -V documentclass=ltjarticle -V classoption=a4j -V geometry:margin=1in --pdf-engine=lualatex
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - src/README-Template.pdf
