@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       - ls #for execution test on docker environment
-      - for file in `find src - type -f -name "*.md"`;
+      - for file in `find src -type f -name "*.md"`;
             do
                 out=`echo $file | sed -e s/\.md//`
                 echo $out.pdf
