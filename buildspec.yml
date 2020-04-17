@@ -11,8 +11,7 @@ phases:
       - mkdir -p _build
       - for file in `find src -type f -name "*.md"`;
           do
-            out=`echo $file | sed -e s/src/_build/`;
-            out=`echo $out | sed -e s/\.md//`;
+            out=`echo $file | sed -e s/src/_build/` | sed -e s/\.md//;
             echo $out.pdf;
             pandoc $file -f markdown -o $out.pdf -V documentclass=ltjarticle -V classoption=a4j -V geometry:margin=1in --pdf-engine=lualatex;
           done
