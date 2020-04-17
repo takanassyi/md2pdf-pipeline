@@ -9,11 +9,11 @@ phases:
       - echo Build started on `date`
       - ls #for execution test on docker environment
       - for file in `find src -type f -name "*.md"`;
-            do
-                out=`echo $file | sed -e s/\.md//`
-                echo $out.pdf
-            done
-      - pandoc src/README-Template.md -f markdown -o src/README-Template.pdf -V documentclass=ltjarticle -V classoption=a4j -V geometry:margin=1in --pdf-engine=lualatex
+          do
+            out=`echo $file | sed -e s/\.md//`;
+            echo $out.pdf;
+          done
+      #- pandoc src/README-Template.md -f markdown -o src/README-Template.pdf -V documentclass=ltjarticle -V classoption=a4j -V geometry:margin=1in --pdf-engine=lualatex
   post_build:
     commands:
       - echo Build completed on `date`
