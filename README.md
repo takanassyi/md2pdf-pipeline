@@ -107,8 +107,7 @@ CodeCommit からソース一式と ECR からPandoc の Docker イメージを�
     - イメージレジストリは Amazon ECR
     - ECR は自分の ECR アカウント
     - レポジトリは Pandoc の Docker イメージをプッシュしたリポジトリ
-    - 特権付与にチ![Screen Shot 2020-04-16 at 20.26.12.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/278110/2e2b70c5-c859-75ce-685e-ee31c692a6b6.png)
-ェック
+    - 特権付与にチェック
     - サービスロールは既存のものがあれば選択、ない場合は新規で作成
 
 ![Screen Shot 2020-04-16 at 20.19.42.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/278110/ef982536-4d90-dc1a-254d-4adb233ff1c3.png)
@@ -154,8 +153,6 @@ CodeCommit からソース一式と ECR からPandoc の Docker イメージを�
 ```
 
 ![Screen Shot 2020-04-16 at 20.26.12.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/278110/f5f79a36-1bf6-e4ab-2ca4-0be1f2992e21.png)
-![Screen Shot 2020-04-16 at 20.35.58.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/278110/999fdfa9-7647-0d93-c9c2-23be696465d1.png)
-![Screen Shot 2020-04-16 at 20.35.58.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/278110/f87b6ada-cabe-f3b3-3520-45e88792129a.png)
 
 
 
@@ -192,7 +189,7 @@ artifacts:
 
 上記 YAML の build フェーズの commands が Pandoc の Docker イメージで実行されるコマンド。 
 `src/` にある Markdown を `_build/` に PDF に変換したファイルを格納する。
-artifacts フェーズで、 `_build/` にある全ての PDF をアップロードすることを記述している。
+artifacts で、 `_build/` にある全ての PDF をアップロードすることを記述している。
 
 
 ## CodePipeline
@@ -230,5 +227,3 @@ Markdown を編集して CodeCommit に push すると、CodePipeline が動作�
 - [CodeBuild の Docker サンプル - AWS CodeBuild](https://docs.aws.amazon.com/ja_jp/codebuild/latest/userguide/sample-docker.html#sample-docker-files)
 - [CodeBuild の Amazon ECR サンプル - AWS CodeBuild](https://docs.aws.amazon.com/ja_jp/codebuild/latest/userguide/sample-ecr.html)
 - [MarkdownをCircleCI上でPDFに変換してGoogleドライブにデプロイする \| QUARTETCOM TECH BLOG](https://tech.quartetcom.co.jp/2018/05/14/markdown-pdf-circleci-googledrive-deployment/)
-
-
